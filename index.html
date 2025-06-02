@@ -281,8 +281,8 @@
         }
 
         /* Top-right quarter */
-        .mood-section.calm {
-            background: linear-gradient(45deg, #74b9ff, #0984e3);
+        .mood-section.overwhelmed {
+            background: linear-gradient(135deg, #fab1a0, #e17055);
             top: 0;
             right: 0;
             clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -328,8 +328,8 @@
         }
 
         /* Top-right quarter */
-        .mood-section.overwhelmed {
-            background: linear-gradient(135deg, #fab1a0, #e17055);
+        .mood-section.calm {
+            background: linear-gradient(45deg, #74b9ff, #0984e3);
             top: 0;
             right: 0;
             clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -598,8 +598,67 @@
                 height: 250px;
             }
 
+            .mood-wheel-large {
+                width: 250px;
+                height: 250px;
+            }
+
+            .mood-wheel-small {
+                width: 125px;
+                height: 125px;
+                top: 62.5px;
+                left: 62.5px;
+            }
+
+            .mood-section.large {
+                width: 125px;
+                height: 125px;
+            }
+
+            .mood-section.large.overwhelmed {
+                border-radius: 0 125px 0 0;
+            }
+
+            .mood-section.large.anxious {
+                border-radius: 0 0 125px 0;
+            }
+
+            .mood-section.large.tired {
+                border-radius: 0 0 0 125px;
+            }
+
+            .mood-section.large.hopeful {
+                border-radius: 125px 0 0 0;
+            }
+
+            .mood-section.small {
+                width: 62.5px;
+                height: 62.5px;
+            }
+
+            .mood-section.small.calm {
+                border-radius: 0 62.5px 0 0;
+            }
+
+            .mood-section.small.content {
+                border-radius: 0 0 62.5px 0;
+            }
+
+            .mood-section.small.numb {
+                border-radius: 0 0 0 62.5px;
+            }
+
+            .mood-section.small.excited {
+                border-radius: 62.5px 0 0 0;
+            }
+
             .mood-section span {
-                font-size: 0.8rem;
+                font-size: 0.7rem;
+            }
+
+            .mood-section.small span {
+                font-size: 0.6rem;
+                width: 50px;
             }
 
             .prompt-bank {
@@ -928,29 +987,36 @@
                 
                 <div class="mood-wheel-container">
                     <div class="mood-wheel">
-                        <div class="mood-section calm" data-mood="calm" onclick="selectMoodWheel('calm')">
-                            <span>Calm</span>
+                        <!-- Large wheel (background) -->
+                        <div class="mood-wheel-large">
+                            <div class="mood-section large overwhelmed" data-mood="overwhelmed" onclick="selectMoodWheel('overwhelmed')">
+                                <span>Overwhelmed</span>
+                            </div>
+                            <div class="mood-section large anxious" data-mood="anxious" onclick="selectMoodWheel('anxious')">
+                                <span>Anxious</span>
+                            </div>
+                            <div class="mood-section large tired" data-mood="tired" onclick="selectMoodWheel('tired')">
+                                <span>Tired</span>
+                            </div>
+                            <div class="mood-section large hopeful" data-mood="hopeful" onclick="selectMoodWheel('hopeful')">
+                                <span>Hopeful</span>
+                            </div>
                         </div>
-                        <div class="mood-section anxious" data-mood="anxious" onclick="selectMoodWheel('anxious')">
-                            <span>Anxious</span>
-                        </div>
-                        <div class="mood-section tired" data-mood="tired" onclick="selectMoodWheel('tired')">
-                            <span>Tired</span>
-                        </div>
-                        <div class="mood-section hopeful" data-mood="hopeful" onclick="selectMoodWheel('hopeful')">
-                            <span>Hopeful</span>
-                        </div>
-                        <div class="mood-section overwhelmed" data-mood="overwhelmed" onclick="selectMoodWheel('overwhelmed')">
-                            <span>Overwhelmed</span>
-                        </div>
-                        <div class="mood-section content" data-mood="content" onclick="selectMoodWheel('content')">
-                            <span>Content</span>
-                        </div>
-                        <div class="mood-section numb" data-mood="numb" onclick="selectMoodWheel('numb')">
-                            <span>Numb</span>
-                        </div>
-                        <div class="mood-section excited" data-mood="excited" onclick="selectMoodWheel('excited')">
-                            <span>Excited</span>
+                        
+                        <!-- Small wheel (foreground) -->
+                        <div class="mood-wheel-small">
+                            <div class="mood-section small calm" data-mood="calm" onclick="selectMoodWheel('calm')">
+                                <span>Calm</span>
+                            </div>
+                            <div class="mood-section small content" data-mood="content" onclick="selectMoodWheel('content')">
+                                <span>Content</span>
+                            </div>
+                            <div class="mood-section small numb" data-mood="numb" onclick="selectMoodWheel('numb')">
+                                <span>Numb</span>
+                            </div>
+                            <div class="mood-section small excited" data-mood="excited" onclick="selectMoodWheel('excited')">
+                                <span>Excited</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1410,8 +1476,6 @@
             // Scroll to writing area
             document.getElementById('random-prompt').scrollIntoView({ behavior: 'smooth' });
         }
-
-        // Survey functionality - now handled by embedded Google Form
 
         // Mobile menu functionality
         document.querySelector('.mobile-menu').addEventListener('click', function() {
