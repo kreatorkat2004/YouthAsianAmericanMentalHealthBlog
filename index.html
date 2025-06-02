@@ -490,16 +490,20 @@
             background: rgba(255, 255, 255, 0.8);
             padding: 2rem 2rem 1rem 2rem;
             border-radius: 15px;
-            margin-bottom: 0rem;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            margin-bottom: -2px;
             transition: transform 0.3s;
         }
 
         .section-card:hover {
             transform: translateY(-3px);
+            border-color: rgba(102, 126, 234, 0.4);
+            z-index: 1;
+            position: relative;
         }
 
         .section-card + .section-card {
-            margin-top: 0.25rem;
+            margin-top: 0rem;
         }
 
         .educational-content h3,
