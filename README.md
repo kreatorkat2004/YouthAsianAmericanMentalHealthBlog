@@ -2,6 +2,8 @@
 
 **Mental Health Resources for Asian American Youth**
 
+Made by Katherine Wu and Aaron Wu
+
 MindBridge is a comprehensive web-based platform designed to provide mental health education, self-assessment tools, and culturally-sensitive resources specifically for Asian American high school students. The platform addresses unique challenges such as cultural stigma, family pressures, and identity struggles while offering a safe, anonymous space for learning and self-reflection.
 
 ## 🎯 Mission
